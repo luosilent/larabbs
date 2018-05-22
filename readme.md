@@ -1,13 +1,4 @@
 
-## 项目概述
-
-* 产品名称：LaraBBS
-* 项目代号：larabbs
-* 官方地址：https://laravel-china.org/topics/6592
-
-LaraBBS 是一个简洁的论坛应用，使用 Laravel5.5 编写而成。一步步开发此项目的教程请见 [《Web 开发实战进阶  - 从零开始构建论坛系统》](https://laravel-china.org/topics/6592)。
-
-![](https://dn-phphub.qbox.me/uploads/images/201711/01/1/xcr6ijTArV.png)
 
 ## 功能如下
 
@@ -150,48 +141,4 @@ npm run watch
 // 在某些环境中，当文件更改时，Webpack 不会更新。如果系统出现这种情况，请考虑使用 watch-poll 命令：
 npm run watch-poll
 ```
-
-### 链接入口
-
-* 首页地址：http://larabbs.test/
-* 管理后台：http://larabbs.test/admin
-
-管理员账号密码如下:
-
-```
-username: summer@yousails.com
-password: password
-```
-
-至此, 安装完成 ^_^。
-
-## 扩展包使用情况
-
-| 扩展包 | 一句话描述 | 本项目应用场景 |
-| --- | --- | --- |
-| [Intervention/image](https://github.com/Intervention/image) | 图片处理功能库 | 用于图片裁切 |
-| [guzzlehttp/guzzle](https://github.com/guzzle/guzzle) | HTTP 请求套件 | 请求百度翻译 API  |
-| [predis/predis](https://github.com/nrk/predis.git) | Redis 官方首推的 PHP 客户端开发包 | 缓存驱动 Redis 基础扩展包 |
-| [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar) | 页面调试工具栏 (对 phpdebugbar 的封装) | 开发环境中的 DEBUG |
-| [spatie/laravel-permission](https://github.com/spatie/laravel-permission) | 角色权限管理 | 角色和权限控制 |
-| [mewebstudio/Purifier](https://github.com/mewebstudio/Purifier) | 用户提交的 Html 白名单过滤 | 帖子内容的 Html 安全过滤，防止 XSS 攻击 |
-| [hieu-le/active](https://github.com/letrunghieu/active) | 选中状态 | 顶部导航栏选中状态 |
-| [summerblue/administrator](https://github.com/summerblue/administrator) | 管理后台 | 模型管理后台、配置信息管理后台 |
-| [viacreative/sudo-su](https://github.com/viacreative/sudo-su) | 用户切换 | 开发环境中快速切换登录账号 |
-| [laravel/horizon](https://github.com/laravel/horizon) | 队列监控 | 队列监控命令与页面控制台 /horizon |
-
-
-## 自定义 Artisan 命令
-
-| 命令行名字 | 说明 | Cron | 代码调用 |
-| --- | --- | --- | --- |
-| `larabbs:calculate-active-user` |  生成活跃用户 | 一小时运行一次 | 无 |
-| `larabbs:sync-user-actived-at` | 从 Redis 中同步最后登录时间到数据库中 | 每天早上 0 点准时 | 无 |
-
-## 队列清单
-
-| 名称 | 说明 | 调用时机 |
-| --- | --- | --- |
-| TranslateSlug.php | 将话题标题翻译为 Slug | TopicObserver 事件 saved() |
-| TopicReplied.php | 通知作者话题有新回复 | 话题被评论以后 |
 
